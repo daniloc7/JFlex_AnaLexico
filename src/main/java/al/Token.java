@@ -3,7 +3,7 @@ package al;
 import java.util.Formatter;
 
 public class Token {
-   public enum T {IF, IDN, FLOAT, STR, EOF, LPA, RPAR, LCO, RCO, OARS, ATR, BRANCO, BOO, CAR, NUM}
+   public enum T {PRS, IDN, FLOAT, STR, EOF, LPA, RPAR, LCO, RCO, OARS, ATR, BRANCO, BOO, CAR, NUM, PTN, COM, NIN}
 
    public T type;
    public Object valor;
@@ -22,12 +22,13 @@ public class Token {
       this.line = line;
       this.col = col;
    }
+   
 
    public String toString() {
       Formatter out = new Formatter();
-      out.format("(%4d,%4d) %s", line, col, type);
+      out.format("(LINHA:%3d, COLUNA:%3d) %s", line, col, type);
       if (valor != null)
-         out.format(" AQUI [%s]", valor);
+         out.format("[%s]\n", valor);
       return out.toString();
    }
 }

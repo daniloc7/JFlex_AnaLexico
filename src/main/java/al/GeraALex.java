@@ -11,6 +11,8 @@ public class GeraALex {
 		
 		String file[] = {rootPath + subPath + "test3.lex"};
 		
+//		System.out.print("AQUI "+rootPath);
+		
 		jflex.Main.main(file);
 		
 	}
